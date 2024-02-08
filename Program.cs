@@ -22,6 +22,7 @@ namespace ConsoleApp1
     }
     internal class Program
     {
+        public delegate void print_string(string str);
         static void Main(string[] args)
         {
             prog prog = new prog();
@@ -34,6 +35,11 @@ namespace ConsoleApp1
             Console.WriteLine(num);
             Console.WriteLine(num2);
             Console.WriteLine(num3);
+            print_string prtstr = delegate (string str)
+            {
+                Console.WriteLine(str);
+            };
+            prtstr("Dhanush");
         }
     }
 }
