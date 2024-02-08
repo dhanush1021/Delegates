@@ -17,7 +17,7 @@ namespace ConsoleApp1
         }
         public string AddString(string str2, string str1)
         {
-            return str1 + str2;
+            return str2 + str1;
         }
     }
     internal class Program
@@ -26,8 +26,11 @@ namespace ConsoleApp1
         {
             prog prog = new prog();
             Addnumber del = new Addnumber(prog.AddNumber);
+            AddString str = new AddString(prog.AddString);
             int num = del(3, 4);
+            string str1 = str("Sunil", "Arun");
             Console.WriteLine(num);
+            Console.WriteLine(str1);
         }
     }
 }
