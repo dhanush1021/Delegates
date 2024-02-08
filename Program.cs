@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public delegate int Addnumber(int num1, int num2);
-    public delegate string AddString(string str1, string str2);
+    public delegate int Addnumber(int nu, int nu2);
+   // public delegate string AddString(string str1, string str2);
 
     class prog
     {
@@ -15,9 +15,9 @@ namespace ConsoleApp1
         {
             return num1 + num2;
         }
-        public string AddString(string str2, string str1)
+        public int AddString(int str2, int str1)
         {
-            return str2 + str1;
+            return str2 * str1;
         }
     }
     internal class Program
@@ -26,11 +26,14 @@ namespace ConsoleApp1
         {
             prog prog = new prog();
             Addnumber del = new Addnumber(prog.AddNumber);
-            AddString str = new AddString(prog.AddString);
             int num = del(3, 4);
-            string str1 = str("Sunil", "Arun");
+            del += prog.AddString;
+            int num2 = del(5, 6);
+            del += prog.AddNumber;
+            int num3 = del(6, 7);
             Console.WriteLine(num);
-            Console.WriteLine(str1);
+            Console.WriteLine(num2);
+            Console.WriteLine(num3);
         }
     }
 }
